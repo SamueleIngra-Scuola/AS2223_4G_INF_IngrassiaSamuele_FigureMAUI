@@ -4,7 +4,55 @@
              x:Class="FigureMAUI.MainPage">
 
     <ScrollView>
+        <StackLayout
+            Spacing="20"
+            Padding="30,0"
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
 
+            <HorizontalStackLayout
+                Spacing="20"
+                HorizontalOptions="Center">
+                
+                <Label Text="Figura"/>
+                <Picker x:Name="cmbShapes">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Cerchio</x:String>
+                            <x:String>Rettangolo</x:String>
+                            <x:String>Quadrato</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout
+                Spacing="20"
+                HorizontalOptions="Center">
+
+                <Label x:Name="lblRadius" Text="Raggio" IsVisible="false"/>
+                <Label x:Name="lblBase" Text="Base" IsVisible="false"/>
+
+                <Entry x:Name="txtBase" IsVisible="false"/>
+
+                <Label x:Name="lblHeight" Text="Altezza" IsVisible="false"/>
+                <Entry x:Name="txtHeight" IsVisible="false"/>
+            </HorizontalStackLayout>
+
+            <Button
+                x:Name="btnCalculate"
+                Text="Calcola"
+                Clicked="Calculate_Clicked"
+                HorizontalOptions="Center" 
+            />
+            
+            <ListView
+                x:Name="lstLastCalculations"
+                Header="Ultime Operazioni"
+                ItemsSource="{Binding LastCalculations}"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" 
+            />
+        </StackLayout>
     </ScrollView>
 
 </ContentPage>

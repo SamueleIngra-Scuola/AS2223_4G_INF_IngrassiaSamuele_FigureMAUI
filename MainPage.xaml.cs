@@ -1,24 +1,40 @@
-﻿namespace FigureMAUI;
+﻿using Microsoft.Maui.ApplicationModel.Communication;
+
+namespace FigureMAUI;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+    public MainPage()
+    {
+        InitializeComponent();
+    }
+    void OnPickerSelectedIndexChanged(object sender, EventArgs e)
+    {
+        switch (cmbShapes.SelectedItem)
+        {
+            case "Quadrato":
+                lblBase.IsVisible = true;
+                txtBase.IsVisible = true;
+                break;
+            case "Rettangolo":
+                lblBase.IsVisible = true;
+                txtBase.IsVisible = true;
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+                lblHeight.IsVisible = true;
+                txtHeight.IsVisible = true;
+                break;
+            case "Cerchio":
+                lblRadius.IsVisible = true;
+                txtBase.IsVisible = true;
+                break;
+            default:
+                break; 
+        }
+    }
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+    private void Calculate_Clicked(object sender, EventArgs e)
+    {
+        int n = 0;
+    }
 }
 
