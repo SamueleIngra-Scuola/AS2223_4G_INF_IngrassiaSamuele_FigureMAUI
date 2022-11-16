@@ -10,6 +10,20 @@ public partial class MainPage : ContentPage
     }
     void OnPickerSelectedIndexChanged(object sender, EventArgs e)
     {
+        
+    }
+
+    private void ShowGeometry_Clicked(object sender, EventArgs e)
+    {
+        //Make everything invisible and delete every text box
+        lblBase.IsVisible = false;
+        txtBase.IsVisible = false;
+        lblHeight.IsVisible = false;
+        txtHeight.IsVisible = false;
+        lblRadius.IsVisible = false;
+        txtHeight.Text = "";
+        txtBase.Text = "";
+
         switch (cmbShapes.SelectedItem)
         {
             case "Quadrato":
@@ -27,14 +41,12 @@ public partial class MainPage : ContentPage
                 lblRadius.IsVisible = true;
                 txtBase.IsVisible = true;
                 break;
-            default:
-                break; 
         }
     }
 
     private void Calculate_Clicked(object sender, EventArgs e)
     {
-        int n = 0;
+        
     }
 }
 

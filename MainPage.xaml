@@ -24,7 +24,15 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
+                
+                <Button
+                x:Name="btnShowGeometry"
+                Text="🔍"
+                Clicked="ShowGeometry_Clicked"
+                HorizontalOptions="Center" 
+                />
             </HorizontalStackLayout>
+            
             <HorizontalStackLayout
                 Spacing="20"
                 HorizontalOptions="Center">
